@@ -1,16 +1,14 @@
-﻿<# Connect to your Azure Account #>
+<# Connect to your Azure Account #>
 Login-AzureRmAccount;
 
 <# Declare local variables #>
-$sourceserver = 'fbgguggenheimsrv';
-$targetserver = 'fbgguggdestsrv';
-$sourcedatabase = 'fbgguggenheim';
+$sourceserver = 'sourcesrv';
+$targetserver = 'destsrv';
+$sourcedatabase = 'source';
 $sourcefqdn = "$sourceserver.database.windows.net";
-$destdatabase = 'fbgguggcopy';
+$destdatabase = 'dbcopy';
 $destfqdn = "$targetserver.database.windows.net";
-$resourcegroup = 'fbgguggenheimrg';
-#$adminuser = 'youradminuser';
-#$adminpassword = 'youadminpassword';
+$resourcegroup = 'sourcerg';
 
 $cred = Get-Credential;
 [string]$adminuser = $cred.UserName;
